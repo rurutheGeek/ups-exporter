@@ -1,0 +1,12 @@
+[Unit]
+Description=UPS Prometheus Exporter
+After=network.target
+
+[Service]
+User=ansible_admin
+WorkingDirectory=/opt/ups-exporter
+ExecStart=/opt/ups-exporter/venv/bin/python ups_exporter.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
